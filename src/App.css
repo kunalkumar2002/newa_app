@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins: wght@300; 400; 500; 600&display=swap");
+.App {
+  text-align: center;
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+nav {
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+/* .mainContent {
+  padding: 10px;
+} */
+
+Outlet {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #f0f0f0;
+}
+@keyframes slide-in-out {
+  10% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
