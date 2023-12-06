@@ -1,0 +1,40 @@
+/* NewsDetails.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.newsTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsDescription {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.newsImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.readMoreLink {
+  display: block;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Optional: Add some styling for the loading state */
+.loadingText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3498db;
+}

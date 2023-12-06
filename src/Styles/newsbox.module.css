@@ -1,0 +1,33 @@
+.container {
+  padding: 0 18px;
+  margin: 0 30px;
+  margin-top: 30px;
+  /* display: none; */
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.newsContainer {
+  display: grid;
+  grid-template-columns: auto auto auto; /* Define three columns */
+  grid-gap: 10px; /* Add some gaps between the grid items */
+  padding: 10px; /* Add some padding around the grid */
+}
+
+.newsItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-size: ;
+}
+.newsItem:hover {
+  box-shadow: 5px 5px 10px rgb(214, 214, 214), -5px -5px 10px rgb(124, 122, 122);
+}
+
+@media (max-width: 600px) {
+  .newsContainer {
+    grid-template-columns: auto auto; /* Define two columns instead of three */
+  }
+}

@@ -1,16 +1,37 @@
 import { useState } from "react";
 import styles from "../Styles/signup.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Signup = () => {
-  const [input, setInput] = useState({
+  const initialFormValues = {
     name: "",
     email: "",
+    Mobile: "",
     pass: "",
-  });
+  };
+  const [input, setInput] = useState(initialFormValues);
+  const navigate = useNavigate();
 
   const handlesubmit = async (e) => {
     e.preventDefault();
+    // console.log(input);
+
+    createUserWithEmailAndPassword(auth, input.email, input.pass)
+      .then(async (res) => {
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: input.name,
+        });
+        //console.log(user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log("geting error", err);
+      });
+    setInput(initialFormValues);
+    //console.log(input);
   };
 
   return (
@@ -22,6 +43,7 @@ const Signup = () => {
           <input
             type="text"
             placeholder="Enter Name"
+            value={input.name}
             onChange={(e) =>
               setInput((prev) => ({ ...prev, name: e.target.value }))
             }
@@ -30,6 +52,7 @@ const Signup = () => {
           <input
             type="email"
             placeholder="Enter Email"
+            value={input.email}
             onChange={(e) =>
               setInput((prev) => ({ ...prev, email: e.target.value }))
             }
@@ -38,6 +61,7 @@ const Signup = () => {
           <input
             type="text"
             placeholder="Enter Password"
+            value={input.pass}
             onChange={(e) =>
               setInput((prev) => ({ ...prev, pass: e.target.value }))
             }
