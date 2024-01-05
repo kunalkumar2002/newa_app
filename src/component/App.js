@@ -21,7 +21,7 @@ function App() {
       //console.log(response.data.articles);
       setNews(response.data.articles);
     } catch (err) {
-      console.log("geting error in fetching data", err);
+      console.log(" error in geting data", err);
     }
   };
 
