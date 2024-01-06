@@ -6,7 +6,7 @@ const Home = ({ news }) => {
     <div>
       <div className={styles.container}>
         <ul style={{ listStyle: "none" }} className={styles.newsContainer}>
-          {news.map((item, index) => (
+          {news && news.map((item, index) => (
             <li key={index} className={styles.newsItem}>
               <Newsbox item={item} index={index} />
             </li>
