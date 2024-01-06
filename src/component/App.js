@@ -7,7 +7,7 @@ import Signin from "../Pages/signin";
 import NewsDetails from "./newsdetails";
 import Favorite from "../Pages/favorite";
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 function App() {
   const [news, setNews] = useState([]);
