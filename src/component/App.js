@@ -15,11 +15,18 @@ function App() {
 
   const getData = async () => {
     try {
-      const response = await axios(
+      // const response = await axios(
+      //   "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c4015268c4eb4683a491909ba85aad43"
+      // );
+      // //console.log(response.data.articles);
+      // setNews(response.data.articles);
+      const response = await fetch(
         "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c4015268c4eb4683a491909ba85aad43"
       );
-      //console.log(response.data.articles);
-      setNews(response.data.articles);
+      //console.log(response);
+      const data = await response.json();
+      console.log(data);
+      setNews(data.articles);
     } catch (err) {
       console.log(" error in geting data", err);
     }
